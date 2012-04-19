@@ -16,6 +16,10 @@ doc:
 install:
 	go install $(PACKAGE)
 
+push:
+	hg push
+	hg push git+ssh://git@github.com/tebeka/desktop.git
+
 README.html: README.rst
 	rst2html $< > $@
 
