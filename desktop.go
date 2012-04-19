@@ -13,6 +13,8 @@ var commands = map[string]string{
 	"linux":   "xdg-open",
 }
 
+var Version = "0.1.0"
+
 // Open calls the OS default program for uri
 func Open(uri string) error {
 	run, ok := commands[runtime.GOOS]
