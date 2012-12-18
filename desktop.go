@@ -9,11 +9,11 @@ import (
 
 var commands = map[string][]string{
 	"windows": []string{"cmd", "/c", "start"},
-	"darwin":  []string{"open",},
-	"linux":   []string{"xdg-open",},
+	"darwin":  []string{"open"},
+	"linux":   []string{"xdg-open"},
 }
 
-var Version = "0.1.0"
+var Version = "0.1.1"
 
 // Open calls the OS default program for uri
 func Open(uri string) error {
@@ -23,7 +23,7 @@ func Open(uri string) error {
 	}
 
 	run = append(run, uri)
-
 	cmd := exec.Command(run[0], run[1:]...)
+
 	return cmd.Start()
 }
