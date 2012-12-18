@@ -7,10 +7,10 @@ import (
 	"runtime"
 )
 
-var commands = map[string]string{
-	"windows": "start",
-	"darwin":  "open",
-	"linux":   "xdg-open",
+var commands = map[string][]string{
+	"windows": []string{"cmd", "/c", "start"},
+	"darwin":  []string{"open",},
+	"linux":   []string{"xdg-open",},
 }
 
 var Version = "0.1.0"
@@ -22,6 +22,8 @@ func Open(uri string) error {
 		return fmt.Errorf("don't know how to open things on %s platform", runtime.GOOS)
 	}
 
-	cmd := exec.Command(run, uri)
+	run = append(run, uri)
+
+	cmd := exec.Command(run[0], run[1:]...)
 	return cmd.Start()
 }
