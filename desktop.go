@@ -16,6 +16,7 @@ var commands = map[string][]string{
 var Version = "0.1.1"
 
 // Open calls the OS default program for uri
+// e.g. Open("http://www.google.com") will open the default browser on www.google.com
 func Open(uri string) error {
 	run, ok := commands[runtime.GOOS]
 	if !ok {
