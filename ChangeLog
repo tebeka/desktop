@@ -1,5 +1,9 @@
+2022-12-04 version 0.2.0
+* go.mod
+* Using build constraints
+
 2012-12-18 version 0.1.1
-    * Fix for windows (thanks minux)
+* Fix for windows (thanks minux)
 
 2012-04-18 version 0.1.0
-    * Initial release
+* Initial release
